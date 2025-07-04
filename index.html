@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SORI:ON - AI 판소리 학습 앱</title>
+  <style>
+    /* Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+    :root {
+      --dark-bg: #0D1D29;
+      --green: #00E8C4;
+      --white: #FFFFFF;
+      --light-gray: #F0F0F0;
+      --heading-color: #FFFFFF;
+      --text-color: #2C3E50;
+      --btn-download: #FF6B6B;
+      --btn-pre: #00E8C4;
+      --pre-title: #FFD700;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--dark-bg);
+      color: var(--heading-color);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; }
+    header {
+      display: flex;
+      align-items: center;
+      background: var(--green);
+    }
+    header .logo {
+      background: var(--white);
+      padding: 0.5rem 1rem;
+    }
+    header .logo span { font-size: 1.5rem; font-weight: 700; color: var(--text-color); }
+    header .tagline {
+      flex: 1;
+      padding-left: 1rem;
+      font-size: 1rem;
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding-right: 1rem;
+    }
+    header nav a {
+      color: var(--text-color);
+      font-weight: 700;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero h1 .highlight { color: var(--green); }
+    .hero p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero .release { margin-bottom: 2rem; }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; }
+    .btn-download {
+      background: var(--btn-download);
+      border: none;
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .btn-preorder {
+      background: transparent;
+      border: 2px solid var(--btn-pre);
+      color: var(--btn-pre);
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    /* Features section centered with fixed width items */
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 3rem 1rem;
+    }
+    .feature-item {
+      flex: 0 0 280px;
+      background: var(--light-gray);
+      border: 2px solid var(--green);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .feature-item .header {
+      background: var(--green);
+      padding: 1rem;
+      text-align: center;
+    }
+    .feature-item .header h3 {
+      margin: 0;
+      color: var(--text-color);
+      font-size: 1.25rem;
+    }
+    .feature-item .body {
+      background: var(--white);
+      color: var(--text-color);
+      padding: 2rem;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .preorder-box {
+      margin: 3rem auto;
+      max-width: 360px;
+      padding: 2rem;
+      background: transparent;
+      border: 3px solid var(--green);
+      border-radius: 8px;
+      text-align: center;
+    }
+    .preorder-box h2 {
+      color: var(--pre-title);
+      margin-bottom: 0.5rem;
+    }
+    .preorder-box p {
+      margin-bottom: 1rem;
+      font-weight: 400;
+      color: var(--white);
+    }
+    .preorder-box input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      color: #333;
+    }
+    .preorder-box button {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--btn-download);
+      border: none;
+      color: var(--white);
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--white);
+      font-size: 0.875rem;
+    }
+    footer a { color: var(--white); font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span>SORI:ON</span>
+    </div>
+    <div class="tagline">전통을 데이터로, 국악의 디지털화</div>
+    <nav>
+      <ul>
+        <li><a href="#">홈</a></li>
+        <li><a href="#features">주요기능소개</a></li>
+        <li><a href="#">커뮤니티</a></li>
+        <li><a href="#">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>명창의 소리<span class="highlight">를 AI로 실시간 분석</span>하다</h1>
+    <p>판소리 학습의 새로운 시작, 판소리고 앱을 지금 만나보세요.</p>
+    <p class="release">2025년 9월 출시예정</p>
+    <div class="hero-buttons">
+      <button class="btn-download">지금 다운로드</button>
+      <button class="btn-preorder">사전 신청</button>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="feature-item">
+      <div class="header"><h3>AI 분석</h3></div>
+      <div class="body">명창의 판소리를 데이터로 변환하여 정밀하게 분석합니다.</div>
+    </div>
+    <div class="feature-item">
+      <div class="header"><h3>실시간 피드백</h3></div>
+      <div class="body">내 목소리를 즉시 평가하고 개선 방향을 제시합니다.</div>
+    </div>
+    <div class="feature-item">
+      <div class="header"><h3>다양한 곡 학습</h3></div>
+      <div class="body">전통 명창의 판소리를 다양한 레퍼토리로 제공합니다.</div>
+    </div>
+  </section>
+
+  <section class="preorder-box">
+    <h2>사전 신청</h2>
+    <p>출시 알림을 놓치지 마세요!</p>
+    <input type="email" placeholder="이메일을 입력하세요">
+    <button>신청하기</button>
+  </section>
+
+  <footer>
+    ©2025 YULLAB Inc. All rights reserved. <a href="https://yullab.co.kr">홈페이지</a> | hello@yullab.co.kr
+  </footer>
+</body>
+</html>
