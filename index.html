@@ -166,6 +166,41 @@
       font-size: 0.875rem;
     }
     footer a { color: var(--white); font-weight: 700; }
+    @media (max-width: 768px) {
+  .split-header {
+    background: none !important;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+  }
+  .left-section {
+    background: #FFFFFF;
+    color: #0D1D29;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .right-section {
+    background: var(--green);
+    padding: 0.5rem 1rem;
+  }
+  .right-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .right-section a {
+    color: var(--dark-bg);
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
   </style>
 </head>
 <body>
