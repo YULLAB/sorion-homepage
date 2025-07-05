@@ -4,99 +4,235 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SORI:ON - AI 판소리 학습 앱</title>
-  <meta name="naver-site-verification" content="f165d550c1cb1c4c49669953d8cc7d75fef864e5" />
-  <meta name="description" content="율랩이 선보이는 AI국악플랫폼 소리온(SORI:ON)의 첫번째 학습앱 판소리고! 명창의 소리를 AI로 실시간 분석, 맞춤형 피드백을 제공합니다." />
-  <meta name="keywords" content="AI국악, 판소리학습, 판소리고, 소리온, SORI:ON, 율랩, YULLAB" />
-  <meta property="og:title" content="판소리 AI 학습 앱 – SORI:ON" />
-  <meta property="og:description" content="명창의 소리를 AI로 실시간 분석하는 판소리 학습 앱 SORI:ON" />
-  <meta property="og:url" content="https://sori-on.com" />
-  <meta property="og:image" content="https://sori-on.com/og-image.png" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {"@type":"Organization","name":"YULLAB","url":"https://sori-on.com","logo":"https://sori-on.com/logo.png"},
-      {"@type":"WebSite","url":"https://sori-on.com","name":"SORI:ON","inLanguage":"ko"},
-      {"@type":"SoftwareApplication","name":"PansoriGo","url":"https://sori-on.com","applicationCategory":"EducationApplication","operatingSystem":"iOS, Android","description":"명창의 소리를 AI로 실시간 분석하는 판소리 학습 앱","image":"https://sori-on.com/pansorigo-screenshot1.png"}
-    ]
-  }
-  </script>
   <style>
     /* Google Font */
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-    :root { --dark-bg:#0D1D29; --green:#00E8C4; --white:#FFFFFF; --light-gray:#F0F0F0; --heading-color:#FFFFFF; --text-color:#2C3E50; --btn-download:#FF6B6B; --btn-pre:#00E8C4; --pre-title:#FFD700; }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Montserrat',sans-serif;background:var(--dark-bg);color:var(--heading-color);line-height:1.6;}
-    a{text-decoration:none;color:inherit;}
-    header.split-header{display:flex;justify-content:space-between;align-items:center;background:var(--green);padding:1rem 2rem;}
-    header .left-section{display:flex;align-items:center;gap:1rem;}
-    header .logo span{font-size:1.5rem;font-weight:700;color:var(--dark-bg);}
-    header .tagline{font-weight:700;color:var(--dark-bg);}
-    header .right-section ul{display:flex;gap:1.5rem;list-style:none;}
-    header .right-section a{font-weight:700;color:var(--dark-bg);}
-    .hero{padding:5rem 2rem;text-align:center;}
-    .hero h1{font-size:2.5rem;}
-    .hero h1 .highlight{color:var(--green);}
-    .hero p{margin:0.5rem 0;}
-    .hero-buttons{margin-top:2rem;display:flex;justify-content:center;gap:1rem;}
-    .btn-download{background:var(--btn-download);border:none;color:var(--white);padding:0.75rem 1.5rem;border-radius:4px;cursor:pointer;font-weight:700;}
-    .btn-preorder{background:transparent;border:2px solid var(--green);color:var(--green);padding:0.75rem 1.5rem;border-radius:4px;cursor:pointer;font-weight:700;}
-    .features{display:flex;justify-content:center;gap:1.5rem;padding:3rem 2rem;}
-    .feature-item{flex:0 0 280px;border:2px solid var(--green);border-radius:8px;overflow:hidden;background:var(--light-gray);}
-    .feature-item .header{background:var(--green);padding:1rem;text-align:center;}
-    .feature-item .header h3{margin:0;color:var(--text-color);}
-    .feature-item .body{background:var(--white);padding:2rem;text-align:center;color:var(--text-color);}
-    .preorder-box{margin:3rem auto;max-width:360px;padding:2rem;background:transparent;border:3px solid var(--green);border-radius:8px;text-align:center;}
-    .preorder-box h2{color:var(--pre-title);margin-bottom:0.5rem;}
-    .preorder-box p{color:var(--white);margin-bottom:1rem;}
-    .preorder-box input{width:100%;padding:0.75rem;border:1px solid #ccc;border-radius:4px;margin-bottom:1rem;color:#333;}
-    .preorder-box button{width:100%;padding:0.75rem;background:var(--btn-download);border:none;color:var(--white);font-weight:700;border-radius:4px;cursor:pointer;}
-    footer{padding:2rem;text-align:center;font-size:0.875rem;color:var(--white);}
-    @media(max-width:768px){
-      header.split-header{flex-direction:column;align-items:stretch;padding:0;}
-      header .left-section{background:var(--white);padding:1rem;}
-      header .right-section{background:var(--green);padding:0.5rem 1rem;}
-      header .right-section ul{flex-direction:column;gap:0.5rem;align-items:center;}
-      .hero h1{font-size:2rem;}
-      .hero-buttons{flex-direction:column;}
-      .features{flex-direction:column;gap:1rem;padding:2rem;}
-      .feature-item{width:100%;max-width:320px;margin:0 auto;}
-      .preorder-box{width:90%;}
+
+    :root {
+      --dark-bg: #0D1D29;
+      --green: #00E8C4;
+      --white: #FFFFFF;
+      --light-gray: #F5F5F5;
+      --highlight: #FF6B6B;
+      --pre-title: #FFD700;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* Header: split into left (logo+tagline) and right (menu) */
+    .split-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(to right, var(--white) 35%, var(--green) 35%);
+    }
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      color: var(--dark-bg);
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .logo span:last-child {
+      color: var(--green);
+    }
+    .tagline {
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+    .right-section ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .right-section a {
+      color: var(--dark-bg);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: 6rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero .highlight { color: var(--green); }
+    .hero p { margin-bottom: 0.5rem; }
+    .hero .release { margin-bottom: 2rem; }
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-download { background-color: var(--highlight); color: var(--white); }
+    .btn-preorder {
+      background: transparent;
+      border: 2px solid var(--green);
+      color: var(--green);
+    }
+
+    /* Features */
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 3rem 1rem;
+    }
+    .feature-item {
+      flex: 0 0 280px;
+      border: 2px solid var(--green);
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: var(--light-gray);
+      color: #000;
+    }
+    .feature-item .header {
+      background-color: var(--green);
+      padding: 1rem;
+      text-align: center;
+    }
+    .feature-item .header h3 { margin: 0; color: #000; }
+    .feature-item .body {
+      background-color: var(--white);
+      padding: 2rem;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    /* Preorder box */
+    .preorder-box {
+      max-width: 360px;
+      margin: 3rem auto;
+      padding: 2rem;
+      border: 3px solid var(--green);
+      border-radius: 8px;
+      background: transparent;
+      text-align: center;
+    }
+    .preorder-box h2 { color: var(--pre-title); margin-bottom: 0.5rem; }
+    .preorder-box p { color: var(--white); margin-bottom: 1rem; }
+    .preorder-box input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    .preorder-box button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: var(--highlight);
+      color: var(--white);
+      border: none;
+      border-radius: 4px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+    }
+    footer a { color: var(--white); font-weight: 700; }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .split-header {
+        flex-direction: column;
+        background: var(--green);
+        padding: 1rem;
+      }
+      .left-section { align-items: center; }
+      .right-section ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+      .hero h1 { font-size: 2rem; }
+      .features { flex-direction: column; gap: 1rem; padding: 2rem 1rem; }
+      .feature-item { max-width: 100%; }
     }
   </style>
 </head>
 <body>
   <header class="split-header">
     <div class="left-section">
-      <div class="logo"><span>SORI:ON</span></div>
+      <div class="logo"><span>SORI</span><span>:ON</span></div>
       <div class="tagline">전통을 데이터로, 국악의 디지털화</div>
     </div>
     <nav class="right-section">
       <ul>
-        <li><a href="#">홈</a></li>
+        <li><a href="#home">홈</a></li>
         <li><a href="#features">주요기능소개</a></li>
-        <li><a href="#">커뮤니티</a></li>
+        <li><a href="#community">커뮤니티</a></li>
         <li><a href="#contact">연락처</a></li>
       </ul>
     </nav>
   </header>
-  <section class="hero">
+
+  <section id="home" class="hero">
     <h1>명창의 소리<span class="highlight">를 AI로 실시간 분석</span>하다</h1>
     <p>판소리 학습의 새로운 시작, 판소리고 앱을 지금 만나보세요.</p>
     <p class="release">2025년 9월 출시예정</p>
     <div class="hero-buttons">
-      <button class="btn-download">지금 다운로드</button>
-      <button class="btn-preorder">사전 신청</button>
+      <button class="btn btn-download">지금 다운로드</button>
+      <button class="btn btn-preorder">사전 신청</button>
     </div>
   </section>
+
   <section id="features" class="features">
-    <div class="feature-item"><div class="header"><h3>AI 분석</h3></div><div class="body">명창의 판소리를 데이터로 변환하여 정밀하게 분석합니다.</div></div>
-    <div class="feature-item"><div class="header"><h3>실시간 피드백</h3></div><div class="body">내 목소리를 즉시 평가하고 개선 방향을 제시합니다.</div></div>
-    <div class="feature-item"><div class="header"><h3>다양한 곡 학습</h3></div><div class="body">전통 명창의 판소리를 다양한 레퍼토리로 제공합니다.</div></div>
+    <div class="feature-item">
+      <div class="header"><h3>AI 분석</h3></div>
+      <div class="body">명창의 판소리를 데이터로 변환하여 정밀하게 분석합니다.</div>
+    </div>
+    <div class="feature-item">
+      <div class="header"><h3>실시간 피드백</h3></div>
+      <div class="body">내 목소리를 즉시 평가하고 개선 방향을 제시합니다.</div>
+    </div>
+    <div class="feature-item">
+      <div class="header"><h3>다양한 곡 학습</h3></div>
+      <div class="body">전통 명창의 판소리를 다양한 레퍼토리로 제공합니다.</div>
+    </div>
   </section>
-  <section class="preorder-box">
-    <h2>사전 신청</h2><p>출시 알림을 놓치지 마세요!</p><input type="email" placeholder="이메일을 입력하세요"><button>신청하기</button>
+
+  <section id="preorder" class="preorder-box">
+    <h2>사전 신청</h2>
+    <p>출시 알림을 놓치지 마세요!</p>
+    <input type="email" placeholder="이메일을 입력하세요">
+    <button>신청하기</button>
   </section>
-  <footer>&copy;2025 YULLAB Inc. All rights reserved. <a href="https://yullab.co.kr">홈페이지</a> | hello@yullab.co.kr</footer>
+
+  <footer>
+    &copy; 2025 YULLAB Inc. All rights reserved.
+  </footer>
 </body>
 </html>
+
