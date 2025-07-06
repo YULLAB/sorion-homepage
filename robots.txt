@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://sori-on.com/sitemap.xml
