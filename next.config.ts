@@ -1,7 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "sori-on.com",
+          },
+        ],
+        destination: "https://www.sori-on.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
