@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
           },
         ],
         destination: "https://www.sori-on.com/:path*",
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },
